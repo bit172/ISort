@@ -11,7 +11,7 @@ public class ISort {
 		}
 		
 		InsertionSort(numbers);
-		printArray(numbers);
+		
 
 	}
 	
@@ -25,6 +25,7 @@ public class ISort {
 	public static void InsertionSort(int[] array) 
 	{	
 		int l = array.length;
+		long start_time = System.nanoTime();
 		for (int i = 1; i < l; i++) // We ignore the first element of the array since we consider it 'sorted'
 		{	
 			int element_to_insert = array[i];
@@ -37,7 +38,11 @@ public class ISort {
 			}
 			
 			array[empty_position] = element_to_insert;
-		} 	
+		}
+		long end_time = System.nanoTime();
+		long run_time = end_time - start_time;
+		printArray(array);
+		System.out.println("\ncompleted in " + run_time + "ns" );
 	}
 
 }
