@@ -42,7 +42,7 @@ public class ISort {
 		long end_time = System.nanoTime();
 		long run_time = end_time - start_time;
 		printArray(array);
-		System.out.println("\ncompleted in " + run_time + "ns" );
+		System.out.println("\ncompleted in " + run_time + "ns");
 	}
 
 }
