@@ -71,14 +71,26 @@ public class ISort {
 		for (int i = 1; i < l; i++) // We ignore the first element of the array since we consider it 'sorted'
 		{
 			int element_to_insert = array[i];
-			int empty_position = i - 1;
+			int compared_item = i - 1;
 			
-			while(empty_position >= 0)
-			{
-				
-				
+			
+			// Write prints here based on conditions
+			for (int j = 0; j < l; j++) {
+				if (j == i)
+					System.out.print("[" + array[j] + "]" + " ");
+				else
+					System.out.print(array[j] + " ");
 			}
+			System.out.print("|\n");
 			
+			
+			while (compared_item >= 0 && array[compared_item] > element_to_insert) // element compared is greater
+			{
+				array[compared_item + 1] = array[compared_item]; // shifting elements if they are greater than the current element
+				compared_item--;
+			}
+			// element compared is smaller (shifts in to the empty_position
+			array[compared_item + 1] = element_to_insert;
 			
 		}
 		long end_time = System.nanoTime();
