@@ -72,18 +72,58 @@ public class ISort {
 		{
 			int element_to_insert = array[i];
 			int compared_item = i - 1;
+			int copy_compared_item = compared_item;
 			
-			
-			// Write prints here based on conditions
-			for (int j = 0; j < l; j++) {
-				if (j == i)
-					System.out.print("[" + array[j] + "]" + " ");
-				else
-					System.out.print(array[j] + " ");
+			while(copy_compared_item >= 0) // Write prints here based on conditions
+			{	
+				if(element_to_insert < array[copy_compared_item])
+					{
+						for (int j = 0; j < l; j++) {
+				
+						if (j == i)
+							System.out.print("[" + array[j] + "]" + " ");
+						else if(j == copy_compared_item)
+							System.out.print("i" + array[j] + "i" + " ");
+						else
+							System.out.print(array[j] + " ");					
+						}
+						System.out.print("<\n");
+						if(copy_compared_item == 0)
+						{
+							for (int j = 0; j < l; j++) {
+								
+								if (j == i)
+									System.out.print("[" + array[j] + "]" + " ");
+								else
+									System.out.print(array[j] + " ");					
+								}
+								System.out.print("|\n");
+								break;
+						}
+						//copy_compared_item--;
+					}
+				
+				if(element_to_insert > array[copy_compared_item]) 
+				{
+					for (int j = 0; j < l; j++) {
+						
+						if (j == i)
+							System.out.print("[" + array[j] + "]" + " ");
+						else if(j == copy_compared_item)
+							System.out.print("i" + array[j] + "i" + " ");
+						else
+							System.out.print(array[j] + " ");
+					}
+					System.out.print(">\n");
+					break;
+				}
+				
+				copy_compared_item--;
+					
+				
+					
+				
 			}
-			System.out.print("|\n");
-			
-			
 			while (compared_item >= 0 && array[compared_item] > element_to_insert) // element compared is greater
 			{
 				array[compared_item + 1] = array[compared_item]; // shifting elements if they are greater than the current element
