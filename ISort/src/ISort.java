@@ -100,7 +100,6 @@ public class ISort {
 								System.out.print("|\n");
 								break;
 						}
-						//copy_compared_item--;
 					}
 				
 				if(element_to_insert > array[copy_compared_item]) 
